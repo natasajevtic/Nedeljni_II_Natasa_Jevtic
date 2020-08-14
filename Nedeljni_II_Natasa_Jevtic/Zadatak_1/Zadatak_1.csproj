@@ -84,17 +84,22 @@
     <Compile Include="Models\Users.cs" />
     <Compile Include="Validations\DateOfBirthValidation.cs" />
     <Compile Include="Validations\DateOfConstructionValidation.cs" />
+    <Compile Include="Validations\DoctorsOfManagerValidation.cs" />
     <Compile Include="Validations\HoursValidation.cs" />
     <Compile Include="Validations\IdentityCardNumberValidation.cs" />
+    <Compile Include="Validations\ManagerFloorValidation.cs" />
+    <Compile Include="Validations\ManagersRoomsValidation.cs" />
     <Compile Include="Validations\NameAndSurnameValidation.cs" />
     <Compile Include="Validations\NumberOfAccessPointsForAmbulanceCars.cs" />
     <Compile Include="Validations\NumberOfAccessPointsForInvalids.cs" />
     <Compile Include="Validations\NumberOfFloorValidation.cs" />
+    <Compile Include="Validations\NumberOfOmissionsValidation.cs" />
     <Compile Include="Validations\NumberOfRoomsPerFloorValidation.cs" />
     <Compile Include="Validations\PasswordValidation.cs" />
     <Compile Include="Validations\UsernameValidation.cs" />
     <Compile Include="Validations\Wrapper.cs" />
     <Compile Include="ViewModels\AddAdministratorViewModel.cs" />
+    <Compile Include="ViewModels\AddManagerViewModel.cs" />
     <Compile Include="ViewModels\AddReportViewModel.cs" />
     <Compile Include="ViewModels\AdministratorsViewModel.cs" />
     <Compile Include="ViewModels\AdministratorViewModel.cs" />
@@ -108,11 +113,16 @@
     <Compile Include="ViewModels\MaintenancesViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ManagerEditFormViewModel.cs" />
+    <Compile Include="ViewModels\ManagersViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
     <Compile Include="ViewModels\SubItem.cs" />
     <Compile Include="Views\AddAdministratorView.xaml.cs">
       <DependentUpon>AddAdministratorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddManagerView.xaml.cs">
+      <DependentUpon>AddManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddReportView.xaml.cs">
       <DependentUpon>AddReportView.xaml</DependentUpon>
@@ -147,6 +157,12 @@
     <Compile Include="Views\MaintenanceView.xaml.cs">
       <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ManagerEditFormView.xaml.cs">
+      <DependentUpon>ManagerEditFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagersView.xaml.cs">
+      <DependentUpon>ManagersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
@@ -176,6 +192,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddAdministratorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +240,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MaintenanceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManagerEditFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManagersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

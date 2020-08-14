@@ -71,5 +71,76 @@ namespace Zadatak_1.Models
                 return null;
             }
         }
+        /// <summary>
+        /// This method edit data about manager and save changes to database.
+        /// </summary>
+        /// <param name="manager">Manager to be edited.</param>
+        /// <returns>True if edited, false if not.</returns>
+        public bool EditManager(vwClinicManager manager)
+        {
+            try
+            {
+                using (ClinicEntities context = new ClinicEntities())
+                {
+                    tblClinicManager managerToEdit = context.tblClinicManagers.Where(x => x.ManagerId == manager.ManagerId).FirstOrDefault();
+                    managerToEdit.Floor = manager.Floor;
+                    managerToEdit.MaximumNumberOfSupervisedDoctors = manager.MaximumNumberOfSupervisedDoctors;
+                    managerToEdit.MinimumNumberOfSupervisedRooms = manager.MinimumNumberOfSupervisedRooms;
+                    managerToEdit.NumberOfOmissions = manager.NumberOfOmissions;
+                    context.SaveChanges();
+                    tblUser userToEdit = context.tblUsers.Where(x => x.UserId == manager.UserId).FirstOrDefault();
+                    userToEdit.NameAndSurname = manager.NameAndSurname;
+                    userToEdit.IdentityCardNumber = manager.IdentityCardNumber;
+                    userToEdit.Gender = manager.Gender;
+                    userToEdit.DateOfBirth = manager.DateOfBirth;
+                    userToEdit.Citizenship = manager.Citizenship;
+                    userToEdit.Username = manager.Username;
+                    userToEdit.Password = Encryption.EncryptPassword(manager.Password);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception" + ex.Message.ToString());
+                return false;
+            }
+        }
+        /// <summary>
+        /// This method deleted manager from databas.
+        /// </summary>
+        /// <param name="manager">Manager to be deleted.</param>
+        /// <returns>True if deleted, false if not.</returns>
+        public bool DeleteManager(vwClinicManager manager)
+        {
+            try
+            {
+                using (ClinicEntities context = new ClinicEntities())
+                {
+                    tblClinicManager managerToDelete = context.tblClinicManagers.Where(x => x.ManagerId == manager.ManagerId).FirstOrDefault();
+                    //finding doctors supervised by this manager
+                    var doctors = context.tblClinicDoctors.Where(x => x.SuperiorManager == manager.ManagerId).ToList();
+                    if (doctors.Count > 0)
+                    {
+                        foreach (var doctor in doctors)
+                        {
+                            doctor.SuperiorManager = null;
+                            context.SaveChanges();
+                        }
+                    }
+                    context.tblClinicManagers.Remove(managerToDelete);                   
+                    context.SaveChanges();
+                    tblUser userToDelete = context.tblUsers.Where(x => x.UserId == manager.UserId).FirstOrDefault();
+                    context.tblUsers.Remove(userToDelete);                    
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception" + ex.Message.ToString());
+                return false;
+            }
+        }
     }
 }

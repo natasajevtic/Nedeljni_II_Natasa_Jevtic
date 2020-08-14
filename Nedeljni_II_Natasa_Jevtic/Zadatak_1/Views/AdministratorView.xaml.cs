@@ -34,11 +34,16 @@ namespace Zadatak_1.Views
             menuMaintenance.Add(new SubItem("View all maintenances", new MaintenancesView()));
             var item2 = new ItemMenu("Maintenances", menuMaintenance, PackIconKind.PeopleGroupOutline);
 
+            var menuManagers = new List<SubItem>();
+            menuManagers.Add(new SubItem("View all managers", new ManagersView()));
+            var item3 = new ItemMenu("Managers", menuManagers, PackIconKind.PeopleGroupOutline);
+
             var item0 = new ItemMenu("", new UserControl(), PackIconKind.ViewDashboard);
 
             Menu.Children.Add(new UserControlMenuItem(item0, this));
             Menu.Children.Add(new UserControlMenuItem(item1, this));
             Menu.Children.Add(new UserControlMenuItem(item2, this));
+            Menu.Children.Add(new UserControlMenuItem(item3, this));
         }
 
         public void SwitchScreen(object sender)
@@ -55,7 +60,11 @@ namespace Zadatak_1.Views
                 }
                 else if (screen.Name == "Maintenances")
                 {
-                    MaintenancesView credentialsView = new MaintenancesView();
+                    MaintenancesView maintenancesView = new MaintenancesView();
+                }
+                else if (screen.Name == "Managers")
+                {
+                    ManagersView managersView = new ManagersView();
                 }
             }
         }
