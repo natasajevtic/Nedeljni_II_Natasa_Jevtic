@@ -84,7 +84,7 @@ namespace Zadatak_1.ViewModels
             Password = (password as PasswordBox).Password;
             if (Username == MasterUsername && Password == MasterPassword)
             {
-                MasterView masterView = new MasterView();
+                MasterView masterView = new MasterView(Username,Password);
                 masterView.ShowDialog();
             }
             else if (users.FindAdministrator(Username, Password) != null)
