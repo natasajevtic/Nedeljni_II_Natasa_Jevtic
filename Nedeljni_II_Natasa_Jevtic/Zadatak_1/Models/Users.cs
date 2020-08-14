@@ -21,7 +21,7 @@ namespace Zadatak_1.Models
             {
                 using (ClinicEntities context = new ClinicEntities())
                 {
-                    return context.vwClinicAdministrators.Where(x => x.Username == username && x.Password == password).FirstOrDefault();
+                    return context.vwClinicAdministrators.Where(x => x.Username == username && x.Password == encryptedPassword).FirstOrDefault();
                 }
             }
             catch (Exception ex)
