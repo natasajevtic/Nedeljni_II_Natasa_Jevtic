@@ -69,6 +69,7 @@
     <Compile Include="Models\Administrators.cs" />
     <Compile Include="Models\Clinic.cs" />
     <Compile Include="Models\Genders.cs" />
+    <Compile Include="Models\Maintenances.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
