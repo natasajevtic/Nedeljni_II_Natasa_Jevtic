@@ -94,6 +94,7 @@
     <Compile Include="ViewModels\AddAdministratorViewModel.cs" />
     <Compile Include="ViewModels\AdministratorsViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateClinicViewModel.cs" />
     <Compile Include="ViewModels\EditMasterCredentialsViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
