@@ -92,6 +92,7 @@
     <Compile Include="Validations\UsernameValidation.cs" />
     <Compile Include="Validations\Wrapper.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\EditMasterCredentialsViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />

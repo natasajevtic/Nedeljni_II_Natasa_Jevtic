@@ -26,7 +26,7 @@ namespace Zadatak_1.Views
             var item1 = new ItemMenu("Administrator", menuAdministrator, PackIconKind.Person);
 
             var menuMaster = new List<SubItem>();
-            menuMaster.Add(new SubItem("Change credentials", new EditMasterCredentialsView()));
+            menuMaster.Add(new SubItem("Change credentials", new EditMasterCredentialsView(Username,Password)));
             var item2 = new ItemMenu("My account", menuMaster, PackIconKind.Person);
 
             var item0 = new ItemMenu("", new UserControl(), PackIconKind.ViewDashboard);
@@ -50,7 +50,7 @@ namespace Zadatak_1.Views
                 }
                 else if (screen.Name == "MyAccount")
                 {
-                    EditMasterCredentialsView credentialsView = new EditMasterCredentialsView();
+                    EditMasterCredentialsView credentialsView = new EditMasterCredentialsView(Username,Password);
                 }
             }
         }
