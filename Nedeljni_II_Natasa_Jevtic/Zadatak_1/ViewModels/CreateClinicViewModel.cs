@@ -69,7 +69,8 @@ namespace Zadatak_1.ViewModels
         {
             if (String.IsNullOrEmpty(Clinic.Name) || String.IsNullOrEmpty(Clinic.DateOfConstruction.ToString()) || String.IsNullOrEmpty(Clinic.Owner) || String.IsNullOrEmpty(Clinic.Address)
               || String.IsNullOrEmpty(Clinic.NumberOfFloors.ToString()) || String.IsNullOrEmpty(Clinic.NumberOfRoomsPerFloor.ToString()) || String.IsNullOrEmpty(Clinic.Terrace.ToString()) ||
-                    String.IsNullOrEmpty(Clinic.Yard.ToString()) || String.IsNullOrEmpty(Clinic.NumberOfAccessPointsForAmbulanceCars.ToString()) || String.IsNullOrEmpty(Clinic.NumberOfAccessPointsForInvalids.ToString()))
+                    String.IsNullOrEmpty(Clinic.Yard.ToString()) || String.IsNullOrEmpty(Clinic.NumberOfAccessPointsForAmbulanceCars.ToString()) || String.IsNullOrEmpty(Clinic.NumberOfAccessPointsForInvalids.ToString())
+                    || Clinic.NumberOfRoomsPerFloor==0)
             {
                 MessageBox.Show("Please fill all fields.", "Notification");
             }

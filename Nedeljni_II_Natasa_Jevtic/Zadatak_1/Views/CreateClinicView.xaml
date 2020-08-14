@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Zadatak_1.Views"
         xmlns:Validation="clr-namespace:Zadatak_1.Validations"
         mc:Ignorable="d"
-        Title="Create clinic" MinHeight="550" Width="600" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+        Title="Create clinic" MinHeight="550" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
