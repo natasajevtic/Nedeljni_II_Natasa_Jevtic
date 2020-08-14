@@ -65,12 +65,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\BindingProxy.cs" />
     <Compile Include="Helper\Encryption.cs" />
     <Compile Include="Models\Administrators.cs" />
     <Compile Include="Models\Clinic.cs" />
     <Compile Include="Models\Genders.cs" />
     <Compile Include="Models\Maintenances.cs" />
     <Compile Include="Models\Users.cs" />
+    <Compile Include="Validations\DateOfBirthValidation.cs" />
+    <Compile Include="Validations\DateOfConstructionValidation.cs" />
+    <Compile Include="Validations\IdentityCardNumberValidation.cs" />
+    <Compile Include="Validations\NameAndSurnameValidation.cs" />
+    <Compile Include="Validations\NumberOfAccessPointsForAmbulanceCars.cs" />
+    <Compile Include="Validations\NumberOfAccessPointsForInvalids.cs" />
+    <Compile Include="Validations\NumberOfFloorValidation.cs" />
+    <Compile Include="Validations\NumberOfRoomsPerFloorValidation.cs" />
+    <Compile Include="Validations\PasswordValidation.cs" />
+    <Compile Include="Validations\UsernameValidation.cs" />
+    <Compile Include="Validations\Wrapper.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
