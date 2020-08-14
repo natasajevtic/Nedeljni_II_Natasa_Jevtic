@@ -36,8 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +79,63 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ClinicModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinic.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicAdministrator.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicDoctor.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicMaintenance.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicManager.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicPatient.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinic.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicAdministrator.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicDoctor.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicMaintenance.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicManager.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicPatient.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwUser.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +153,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\ClinicModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClinicModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ClinicModel.edmx.diagram">
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,6 +168,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Models\ClinicModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClinicModel.Context.cs</LastGenOutput>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ClinicModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

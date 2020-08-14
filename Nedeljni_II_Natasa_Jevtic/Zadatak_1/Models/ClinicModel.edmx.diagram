@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1e08fcc67894b5284c14dcf4f24a9ec" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicModel.tblClinic" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblClinicAdministrator" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblClinicDoctor" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblClinicMaintenance" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblClinicManager" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblClinicPatient" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.tblUser" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinic" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinicAdministrator" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinicDoctor" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinicMaintenance" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinicManager" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwClinicPatient" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicModel.vwUser" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__UserI__269AB60B" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__Super__3B95D2F1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__UserI__3AA1AEB8" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__UserI__2B5F6B28" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__UserI__30242045" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicModel.FK__tblClinic__UserI__4336F4B9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
