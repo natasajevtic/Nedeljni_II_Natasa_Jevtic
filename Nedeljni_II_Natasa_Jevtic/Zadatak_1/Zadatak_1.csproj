@@ -99,6 +99,9 @@
     <Compile Include="ViewModels\EditClinicViewModel.cs" />
     <Compile Include="ViewModels\EditMasterCredentialsViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
+    <Compile Include="ViewModels\MaintenanceAddFormViewModel.cs" />
+    <Compile Include="ViewModels\MaintenanceEditFormViewModel.cs" />
+    <Compile Include="ViewModels\MaintenancesViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\SubItem.cs" />
@@ -122,6 +125,12 @@
     </Compile>
     <Compile Include="Views\EditMasterCredentialsView.xaml.cs">
       <DependentUpon>EditMasterCredentialsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceAddFormView.xaml.cs">
+      <DependentUpon>MaintenanceAddFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceEditFormView.xaml.cs">
+      <DependentUpon>MaintenanceEditFormView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MaintenancesView.xaml.cs">
       <DependentUpon>MaintenancesView.xaml</DependentUpon>
@@ -179,6 +188,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditMasterCredentialsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaintenanceAddFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaintenanceEditFormView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
