@@ -4,9 +4,101 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Zadatak_1.Views"
+             xmlns:Validation="clr-namespace:Zadatak_1.Validations"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label Content="Owner:"
+               Grid.Column="1"
+               Grid.Row="1"/>
+        <Label Content="Number of access points for ambulance cars:"
+               Grid.Column="1"
+               Grid.Row="3"/>
+        <Label Content="Number of access points for invalids:"
+               Grid.Column="1"
+               Grid.Row="5"/>
+        <TextBox Text="{Binding Clinic.Owner}"
+               Grid.Column="3"
+               Grid.Row="1"
+               MinWidth="150"/>
+        <TextBox x:Name="txtAmulanceCars"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="3"
+                 xmlns:Bind="clr-namespace:Zadatak_1.Helper">
+            <TextBox.Resources>
+                <Bind:BindingProxy x:Key="proxy" Data="{Binding}"/>
+            </TextBox.Resources>
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfAccessPointsForAmbulanceCars" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfAccessPointsForAmbulanceCarsValidation>
+                            <Validation:NumberOfAccessPointsForAmbulanceCarsValidation.Wrapper>
+                                <Validation:Wrapper OldNumberOfAmbulanceCars="{Binding Data.OldClinic.NumberOfAccessPointsForAmbulanceCars, Source={StaticResource proxy}, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Validation:NumberOfAccessPointsForAmbulanceCarsValidation.Wrapper>
+                        </Validation:NumberOfAccessPointsForAmbulanceCarsValidation>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="txtInvalids"
+               Validation.ErrorTemplate="{StaticResource errorTemplate}"
+               Grid.Column="3"
+               Grid.Row="5"
+               MinWidth="150"
+               xmlns:Bind="clr-namespace:Zadatak_1.Helper">
+            <TextBox.Resources>
+                <Bind:BindingProxy x:Key="proxy" Data="{Binding}"/>
+            </TextBox.Resources>
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfAccessPointsForInvalids" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfAccessPointsForInvalidsValidation>
+                            <Validation:NumberOfAccessPointsForInvalidsValidation.Wrapper>
+                                <Validation:Wrapper OldNumberOfInvalids="{Binding Data.OldClinic.NumberOfAccessPointsForInvalids, Source={StaticResource proxy}, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Validation:NumberOfAccessPointsForInvalidsValidation.Wrapper>
+                        </Validation:NumberOfAccessPointsForInvalidsValidation>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Grid.Column="3" 
+                Grid.Row="7" 
+                Content="Save" 
+                Width="150"
+                Command="{Binding Save}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=txtAmulanceCars}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=txtInvalids}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>        
     </Grid>
 </UserControl>
