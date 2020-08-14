@@ -104,7 +104,7 @@ namespace Zadatak_1.ViewModels
             else if (users.FindMaintenance(Username, Password) != null)
             {
                 Maintenance = users.FindMaintenance(Username, Password);
-                MaintenanceView maintenanceView = new MaintenanceView();
+                MaintenanceView maintenanceView = new MaintenanceView(Maintenance);
                 maintenanceView.ShowDialog();
             }
             else if (users.FindManager(Username, Password) != null)

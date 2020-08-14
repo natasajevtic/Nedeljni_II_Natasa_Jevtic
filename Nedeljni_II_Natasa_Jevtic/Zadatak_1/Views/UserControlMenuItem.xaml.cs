@@ -12,6 +12,7 @@ namespace Zadatak_1.Views
     {
         MasterView _context;
         AdministratorView adminContext;
+        MaintenanceView maintenanceContext;
 
         private bool mouseClicked;
 
@@ -37,6 +38,17 @@ namespace Zadatak_1.Views
             this.DataContext = itemMenu;
         }
 
+        public UserControlMenuItem(ItemMenu itemMenu, MaintenanceView context)
+        {
+            InitializeComponent();
+            maintenanceContext = context;
+
+            ExpanderMenu.Visibility = itemMenu.SubItems == null ? Visibility.Collapsed : Visibility.Visible;
+            ListViewItemMenu.Visibility = itemMenu.SubItems == null ? Visibility.Visible : Visibility.Collapsed;
+
+            this.DataContext = itemMenu;
+        }
+
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (mouseClicked)
@@ -50,6 +62,10 @@ namespace Zadatak_1.Views
                     else if (adminContext != null)
                     {
                         adminContext.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
+                    }
+                    else if (maintenanceContext != null)
+                    {
+                        maintenanceContext.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
                     }
                 }
             }
@@ -68,8 +84,11 @@ namespace Zadatak_1.Views
                 {
                     adminContext.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
                 }
+                else if (maintenanceContext != null)
+                {
+                    maintenanceContext.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
+                }
             }
         }
     }
 }
-
