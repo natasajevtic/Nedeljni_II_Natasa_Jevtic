@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Zadatak_1.Helper;
 
@@ -171,6 +172,7 @@ namespace Zadatak_1.Models
                     context.SaveChanges();
                     context.tblUsers.Remove(userToDelete);
                     context.SaveChanges();
+                    DeleteFile(maintenanceToDelete);
                     return true;
                 }
             }
@@ -178,6 +180,14 @@ namespace Zadatak_1.Models
             {
                 Debug.WriteLine("Exception" + ex.Message.ToString());
                 return false;
+            }
+        }
+        public void DeleteFile(tblClinicMaintenance maintenance)
+        {
+            string source = string.Format(@"../../Maintenance{0}.txt", maintenance.MaintenanceId);
+            if (File.Exists(source))
+            {
+                File.Delete(source);                
             }
         }
     }

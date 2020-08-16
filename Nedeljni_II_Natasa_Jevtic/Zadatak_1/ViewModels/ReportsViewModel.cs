@@ -82,7 +82,7 @@ namespace Zadatak_1.ViewModels
         public void GetReports()
         {
             Reports = new List<Report>();
-            string source = string.Format(@"../../Maintenance{0}.txt", Maintenance.IdentityCardNumber);
+            string source = string.Format(@"../../Maintenance{0}.txt", Maintenance.MaintenanceId);
             if (File.Exists(source))
             {
                 string[] lines = File.ReadAllLines(source);
