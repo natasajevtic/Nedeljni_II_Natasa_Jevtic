@@ -1,0 +1,225 @@
+﻿<Window x:Class="Zadatak_1.Views.AddPatientView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadatak_1.Views"
+        xmlns:Validation="clr-namespace:Zadatak_1.Validations"
+        mc:Ignorable="d"
+        Title="Add patient" MinHeight="450" MinWidth="500" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label Content="Name and surname:"
+               Grid.Column="1"
+               Grid.Row="1"/>
+        <Label Content="Identity card number:"
+               Grid.Column="1"
+               Grid.Row="3"/>
+        <Label Content="Gender:"
+               Grid.Column="1"
+               Grid.Row="5"/>
+        <Label Content="Date of birth:"
+               Grid.Column="1"
+               Grid.Row="7"/>
+        <Label Content="Citizenship:"
+               Grid.Column="1"
+               Grid.Row="9"/>
+        <Label Content="Username:"
+               Grid.Column="1"
+               Grid.Row="11"/>
+        <Label Content="Password:"
+               Grid.Column="1"
+               Grid.Row="13"/>
+        <Label Content="Health insurance card number:"
+               Grid.Column="1"
+               Grid.Row="15"/>
+        <Label Content="Expiration date of health insurance:"
+               Grid.Column="1"
+               Grid.Row="17"/>
+        <Label Content="Unique number of selected doctor:"
+               Grid.Column="1"
+               Grid.Row="19"/>
+        <TextBox x:Name="btnNameAndSurname"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="1">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.NameAndSurname"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:NameAndSurnameValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnIdCardNumber"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="3">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.IdentityCardNumber"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:IdentityCardNumberValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ComboBox Grid.Column="3" 
+                  Grid.Row="5"
+                  ItemsSource="{Binding GenderList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding ClinicPatient.Gender, UpdateSourceTrigger=PropertyChanged}"
+                  Text="{Binding ClinicPatient.Gender}"/>
+        <TextBox x:Name="btnDateOfBirth"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="7">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.DateOfBirth"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True"
+                         StringFormat="d">
+                    <Binding.ValidationRules>
+                        <Validation:DateOfBirthValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Text="{Binding ClinicPatient.Citizenship, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="3"
+                 Grid.Row="9"/>
+        <TextBox x:Name="btnUsername"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="11">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.Username"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:UsernameValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnPassword"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="13">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.Password"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:PasswordValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnHealthInsuranceCard"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="15">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.HealthInsuranceCardNumber"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:HealthInsuranceCardValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnExpiryDate"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="17">
+            <TextBox.Text>
+                <Binding Path="ClinicPatient.ExpirationDateOfHealthInsurance"
+                    UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True"
+                         StringFormat="d">
+                    <Binding.ValidationRules>
+                        <Validation:ExpiryDateOfHealthInsuranceValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ComboBox Grid.Column="3" 
+                  Grid.Row="19"
+                  DisplayMemberPath="UniqueNumber"
+                  ItemsSource="{Binding DoctorList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding Doctor, UpdateSourceTrigger=PropertyChanged}"
+                  Text="{Binding ClinicPatient.UniqueNumberOfSelectedDoctor}"/>
+        <Button Grid.Column="1" 
+                Grid.Row="21" 
+                Content="Save" 
+                Command="{Binding Save}"
+                CommandParameter="{Binding ElementName=btnPassword}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnNameAndSurname}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnIdCardNumber}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnUsername}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnDateOfBirth}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnPassword}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnHealthInsuranceCard}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnExpiryDate}" Value="False"/>                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Grid.Column="3" 
+                Grid.Row="21" 
+                Content="Cancel" 
+                Command="{Binding Cancel}" 
+                Width="130" 
+                HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

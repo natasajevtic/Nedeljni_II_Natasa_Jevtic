@@ -1,0 +1,198 @@
+﻿<Window x:Class="Zadatak_1.Views.CreateClinicView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadatak_1.Views"
+        xmlns:Validation="clr-namespace:Zadatak_1.Validations"
+        mc:Ignorable="d"
+        Title="Create clinic" MinHeight="550" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label Content="Name:"
+               Grid.Column="1"
+               Grid.Row="1"/>
+        <Label Content="Date of construction:"
+               Grid.Column="1"
+               Grid.Row="3"/>
+        <Label Content="Owner:"
+               Grid.Column="1"
+               Grid.Row="5"/>
+        <Label Content="Address:"
+               Grid.Column="1"
+               Grid.Row="7"/>
+        <Label Content="Number of floors:"
+               Grid.Column="1"
+               Grid.Row="9"/>
+        <Label Content="Number of rooms per floor:"
+               Grid.Column="1"
+               Grid.Row="11"/>
+        <Label Content="Terrace:"
+               Grid.Column="1"
+               Grid.Row="13"/>
+        <Label Content="Yard:"
+               Grid.Column="1"
+               Grid.Row="15"/>
+        <Label Content="Number of access points for ambulance cars:"
+               Grid.Column="1"
+               Grid.Row="17"/>
+        <Label Content="Number of access points for invalids:"
+               Grid.Column="1"
+               Grid.Row="19"/>
+        <TextBox Text="{Binding Clinic.Name}"
+               Grid.Column="3"
+               Grid.Row="1"
+               MinWidth="150"/>
+        <TextBox x:Name="btnDateOfConstruction"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="3">
+            <TextBox.Text>
+                <Binding Path="Clinic.DateOfConstruction"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True"
+                         StringFormat="d">
+                    <Binding.ValidationRules>
+                        <Validation:DateOfConstructionValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Text="{Binding Clinic.Owner}"
+               Grid.Column="3"
+               Grid.Row="5"
+               MinWidth="150"/>
+        <TextBox Text="{Binding Clinic.Address}"
+               Grid.Column="3"
+               Grid.Row="7"
+               MinWidth="150"/>
+        <TextBox x:Name="btnNumberOfFloors"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="9">
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfFloors"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfFloorValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnNumberOfRoomsPerFloor"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="11">
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfRoomsPerFloor"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfRoomsPerFloorValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <CheckBox Grid.Column="3"
+                  Grid.Row="13"
+                  IsChecked="{Binding Path=Clinic.Terrace}"
+                  HorizontalAlignment="Center"/>
+        <CheckBox Grid.Column="3"
+                  Grid.Row="15"
+                  IsChecked="{Binding Path=Clinic.Yard}"
+                  HorizontalAlignment="Center"/>
+        <TextBox x:Name="btnAmbulanceCars"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="17">
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfAccessPointsForAmbulanceCars"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfAccessPointsForAmbulanceCarsValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="btnInvalids"
+                 Validation.ErrorTemplate="{StaticResource errorTemplate}"
+                 Grid.Column="3"
+                 Grid.Row="19">
+            <TextBox.Text>
+                <Binding Path="Clinic.NumberOfAccessPointsForInvalids"
+                         UpdateSourceTrigger="PropertyChanged"
+                         ValidatesOnDataErrors="True"
+                         NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <Validation:NumberOfAccessPointsForInvalidsValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Grid.Column="1" 
+                Grid.Row="21" 
+                Content="Save" 
+                Command="{Binding Save}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnDateOfConstruction}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnNumberOfFloors}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnNumberOfRoomsPerFloor}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnAmbulanceCars}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=btnInvalids}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Grid.Column="3" 
+                Grid.Row="21" 
+                Content="Cancel" 
+                Command="{Binding Cancel}" 
+                Width="130" 
+                HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
