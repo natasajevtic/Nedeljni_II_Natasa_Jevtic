@@ -109,5 +109,24 @@ namespace Zadatak_1.Models
                 return false;
             }
         }
+        /// <summary>
+        /// This method checks if doctor exists in database.
+        /// </summary>
+        /// <returns>True if exists, false if not.</returns>
+        public bool CheckIfDoctorExists()
+        {
+            try
+            {
+                using (ClinicEntities context = new ClinicEntities())
+                {
+                    return context.tblClinicDoctors.Any();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception" + ex.Message.ToString());
+                return false;
+            }
+        }
     }
 }

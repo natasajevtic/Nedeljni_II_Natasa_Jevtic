@@ -96,6 +96,7 @@
     <Compile Include="Models\Genders.cs" />
     <Compile Include="Models\Maintenances.cs" />
     <Compile Include="Models\Managers.cs" />
+    <Compile Include="Models\Patients.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Shifts.cs" />
     <Compile Include="Models\tblClinic.cs">
@@ -146,6 +147,8 @@
     <Compile Include="Validations\DateOfConstructionValidation.cs" />
     <Compile Include="Validations\DoctorNumberValidation.cs" />
     <Compile Include="Validations\DoctorsOfManagerValidation.cs" />
+    <Compile Include="Validations\ExpiryDateOfHealthInsuranceValidation.cs" />
+    <Compile Include="Validations\HealthInsuranceCardValidation.cs" />
     <Compile Include="Validations\HoursValidation.cs" />
     <Compile Include="Validations\IdentityCardNumberValidation.cs" />
     <Compile Include="Validations\ManagerFloorValidation.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="ViewModels\AddAdministratorViewModel.cs" />
     <Compile Include="ViewModels\AddDoctorViewModel.cs" />
     <Compile Include="ViewModels\AddManagerViewModel.cs" />
+    <Compile Include="ViewModels\AddPatientViewModel.cs" />
     <Compile Include="ViewModels\AddReportViewModel.cs" />
     <Compile Include="ViewModels\AdministratorsViewModel.cs" />
     <Compile Include="ViewModels\AdministratorViewModel.cs" />
@@ -171,6 +175,7 @@
     <Compile Include="ViewModels\EditClinicViewModel.cs" />
     <Compile Include="ViewModels\EditDoctorViewModel.cs" />
     <Compile Include="ViewModels\EditMasterCredentialsViewModel.cs" />
+    <Compile Include="ViewModels\EditPatientViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
     <Compile Include="ViewModels\MaintenanceAddFormViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceEditFormViewModel.cs" />
@@ -181,6 +186,7 @@
     <Compile Include="ViewModels\ManagersViewModel.cs" />
     <Compile Include="ViewModels\ManagerViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
+    <Compile Include="ViewModels\PatientsViewModel.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
     <Compile Include="ViewModels\SubItem.cs" />
     <Compile Include="Views\AddAdministratorView.xaml.cs">
@@ -191,6 +197,9 @@
     </Compile>
     <Compile Include="Views\AddManagerView.xaml.cs">
       <DependentUpon>AddManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPatientView.xaml.cs">
+      <DependentUpon>AddPatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddReportView.xaml.cs">
       <DependentUpon>AddReportView.xaml</DependentUpon>
@@ -219,6 +228,9 @@
     <Compile Include="Views\EditMasterCredentialsView.xaml.cs">
       <DependentUpon>EditMasterCredentialsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditPatientView.xaml.cs">
+      <DependentUpon>EditPatientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MaintenanceAddFormView.xaml.cs">
       <DependentUpon>MaintenanceAddFormView.xaml</DependentUpon>
     </Compile>
@@ -242,6 +254,9 @@
     </Compile>
     <Compile Include="Views\MasterView.xaml.cs">
       <DependentUpon>MasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientsView.xaml.cs">
+      <DependentUpon>PatientsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
@@ -274,6 +289,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -313,6 +332,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EditPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MaintenanceAddFormView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -342,6 +365,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

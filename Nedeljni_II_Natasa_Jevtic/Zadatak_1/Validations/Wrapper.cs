@@ -63,5 +63,15 @@ namespace Zadatak_1.Validations
             get { return (string)GetValue(OldBankAccountNumberProperty); }
             set { SetValue(OldBankAccountNumberProperty, value); }
         }
+
+        public static readonly DependencyProperty OldHealthInsuranceProperty =
+        DependencyProperty.Register("OldHealthInsurance", typeof(string),
+        typeof(Wrapper), new PropertyMetadata(string.Empty));
+
+        public string OldHealthInsurance
+        {
+            get { return (string)GetValue(OldHealthInsuranceProperty); }
+            set { SetValue(OldHealthInsuranceProperty, value); }
+        }
     }
 }
