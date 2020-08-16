@@ -142,5 +142,35 @@ namespace Zadatak_1.Models
                 return false;
             }
         }
+        /// <summary>
+        /// This method finds managers who can supervise. Number of ommisions cannot be higher than 5 and cannot violate the limit on the maximum number of doctors.
+        /// </summary>
+        /// <returns>List of managers.</returns>
+        public List<vwClinicManager> ManagersWhoCanSupervise()
+        {
+            try
+            {
+                using (ClinicEntities context = new ClinicEntities())
+                {
+                    var managers = context.vwClinicManagers.Where(x => x.NumberOfOmissions <=5).ToList();
+                    List<vwClinicManager> managerWhoCanSupervise = new List<vwClinicManager>();
+                    foreach (var manager in managers)
+                    {
+                        //finding number of doctors that this manager supervise
+                        int numberOfDoctors = context.tblClinicDoctors.Where(x => x.SuperiorManager == manager.ManagerId).Count();                        
+                        if (numberOfDoctors < manager.MaximumNumberOfSupervisedDoctors)
+                        {
+                            managerWhoCanSupervise.Add(manager);
+                        }
+                    }
+                    return managerWhoCanSupervise;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception" + ex.Message.ToString());
+                return null;
+            }
+        }
     }
 }

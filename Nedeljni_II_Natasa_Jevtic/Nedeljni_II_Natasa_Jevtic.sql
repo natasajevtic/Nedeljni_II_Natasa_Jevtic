@@ -120,11 +120,15 @@ INNER JOIN tblUser u
 ON m.UserId = u.UserId;
 GO
 create view vwClinicDoctor as
-select u.*, d.BankAccountNumber, d.Department, d.DoctorId, d.ResponsibleForPatientAdmission, d.Shift, d.SuperiorManager,
+select u.*, d.BankAccountNumber, d.Department, d.DoctorId, d.ResponsibleForPatientAdmission, d.Shift, d.SuperiorManager, us.NameAndSurname 'Manager',
 d.UniqueNumber
 from tblClinicDoctor d
 INNER JOIN tblUser u
-ON d.UserId = u.UserId;
+ON d.UserId = u.UserId
+LEFT JOIN tblClinicManager m
+ON d.SuperiorManager = m.ManagerId
+LEFT JOIN tblUser us
+ON m.UserId = us.UserId;
 GO
 create view vwClinicPatient as
 select u.*, p.ExpirationDateOfHealthInsurance, p.HealthInsuranceCardNumber, p.PatientId, p.UniqueNumberOfSelectedDoctor

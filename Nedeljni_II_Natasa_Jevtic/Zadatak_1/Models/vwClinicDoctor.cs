@@ -28,6 +28,7 @@ namespace Zadatak_1.Models
         public bool ResponsibleForPatientAdmission { get; set; }
         public string Shift { get; set; }
         public Nullable<int> SuperiorManager { get; set; }
+        public string Manager { get; set; }
         public string UniqueNumber { get; set; }
     }
 }

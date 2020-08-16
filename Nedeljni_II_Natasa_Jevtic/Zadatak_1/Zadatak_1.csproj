@@ -77,13 +77,74 @@
     <Compile Include="Helper\Encryption.cs" />
     <Compile Include="Models\Administrators.cs" />
     <Compile Include="Models\Clinic.cs" />
+    <Compile Include="Models\ClinicModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Doctors.cs" />
     <Compile Include="Models\Genders.cs" />
     <Compile Include="Models\Maintenances.cs" />
     <Compile Include="Models\Managers.cs" />
     <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\Shifts.cs" />
+    <Compile Include="Models\tblClinic.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicAdministrator.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicDoctor.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicMaintenance.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicManager.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblClinicPatient.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\vwClinic.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicAdministrator.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicDoctor.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicMaintenance.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicManager.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwClinicPatient.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwUser.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validations\BankAccountValidation.cs" />
     <Compile Include="Validations\DateOfBirthValidation.cs" />
     <Compile Include="Validations\DateOfConstructionValidation.cs" />
+    <Compile Include="Validations\DoctorNumberValidation.cs" />
     <Compile Include="Validations\DoctorsOfManagerValidation.cs" />
     <Compile Include="Validations\HoursValidation.cs" />
     <Compile Include="Validations\IdentityCardNumberValidation.cs" />
@@ -99,13 +160,16 @@
     <Compile Include="Validations\UsernameValidation.cs" />
     <Compile Include="Validations\Wrapper.cs" />
     <Compile Include="ViewModels\AddAdministratorViewModel.cs" />
+    <Compile Include="ViewModels\AddDoctorViewModel.cs" />
     <Compile Include="ViewModels\AddManagerViewModel.cs" />
     <Compile Include="ViewModels\AddReportViewModel.cs" />
     <Compile Include="ViewModels\AdministratorsViewModel.cs" />
     <Compile Include="ViewModels\AdministratorViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateClinicViewModel.cs" />
+    <Compile Include="ViewModels\DoctorsViewModel.cs" />
     <Compile Include="ViewModels\EditClinicViewModel.cs" />
+    <Compile Include="ViewModels\EditDoctorViewModel.cs" />
     <Compile Include="ViewModels\EditMasterCredentialsViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
     <Compile Include="ViewModels\MaintenanceAddFormViewModel.cs" />
@@ -115,11 +179,15 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManagerEditFormViewModel.cs" />
     <Compile Include="ViewModels\ManagersViewModel.cs" />
+    <Compile Include="ViewModels\ManagerViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
     <Compile Include="ViewModels\SubItem.cs" />
     <Compile Include="Views\AddAdministratorView.xaml.cs">
       <DependentUpon>AddAdministratorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddDoctorView.xaml.cs">
+      <DependentUpon>AddDoctorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddManagerView.xaml.cs">
       <DependentUpon>AddManagerView.xaml</DependentUpon>
@@ -136,11 +204,17 @@
     <Compile Include="Views\CreateClinicView.xaml.cs">
       <DependentUpon>CreateClinicView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DoctorsView.xaml.cs">
+      <DependentUpon>DoctorsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditClinicView.xaml.cs">
       <DependentUpon>EditClinicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditDoctorView.xaml.cs">
+      <DependentUpon>EditDoctorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditMasterCredentialsView.xaml.cs">
       <DependentUpon>EditMasterCredentialsView.xaml</DependentUpon>
@@ -195,6 +269,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddDoctorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -215,11 +293,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DoctorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DoctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditClinicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditDoctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,63 +359,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ClinicModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClinicModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ClinicModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ClinicModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClinicModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinic.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinicAdministrator.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinicDoctor.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinicMaintenance.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinicManager.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblClinicPatient.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblUser.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinic.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinicAdministrator.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinicDoctor.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinicMaintenance.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinicManager.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwClinicPatient.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\vwUser.cs">
-      <DependentUpon>ClinicModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -363,12 +392,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\ClinicModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ClinicModel.Context.cs</LastGenOutput>
       <DependentUpon>ClinicModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ClinicModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
