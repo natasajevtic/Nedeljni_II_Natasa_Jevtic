@@ -18,7 +18,14 @@ namespace Zadatak_1.Validations
             try
             {
                 DateTime conversion = DateTime.ParseExact(dateOfBirth, "M/d/yyyy", CultureInfo.InvariantCulture);
-                return new ValidationResult(true, null);
+                if (conversion > DateTime.Now)
+                {
+                    return new ValidationResult(false, "Cannot be in the future.");
+                }
+                else
+                {
+                    return new ValidationResult(true, null);
+                }                
             }
             //if cannot convert to DateTime, because  doesn't contain a valid date
             catch (Exception)

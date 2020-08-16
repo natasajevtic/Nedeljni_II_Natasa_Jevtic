@@ -17,8 +17,15 @@ namespace Zadatak_1.Validations
             string dateOfConstruction = value as string;
             try
             {
-                DateTime conversion = DateTime.ParseExact(dateOfConstruction, "M/d/yyyy", CultureInfo.InvariantCulture);                
-                return new ValidationResult(true, null);
+                DateTime conversion = DateTime.ParseExact(dateOfConstruction, "M/d/yyyy", CultureInfo.InvariantCulture);
+                if (conversion > DateTime.Now)
+                {
+                    return new ValidationResult(false, "Cannot be in the future.");
+                }
+                else
+                {
+                    return new ValidationResult(true, null);
+                }
             }
             //if cannot convert to DateTime, because  doesn't contain a valid date
             catch (Exception)
